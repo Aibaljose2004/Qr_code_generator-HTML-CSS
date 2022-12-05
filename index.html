@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qr code generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="background">
+<div class="box">
+    <header>
+        <h1>Qr code generator</h1>
+        <p>Enter text or the url to covert to the qr code</p>
+        
+    </header>
+    <div class="form">
+        <input id="value" type="text" placeholder="Enter your text" spellcheck="false">
+        <button onclick="addClassByClick()">generator Qr code</button>
+    </div>
+    <div class="imgbox">
+        <img src="https://pngimg.com/uploads/qr_code/qr_code_PNG17.png" width="170px" alt="">
+    </div>
+
+</div>
+
+    </section>
+    <script>
+        const bg = document.querySelector(".background"),
+        box= document.querySelector(".imgbox"),
+        data=document.getElementById("value").value,
+        imgdata=bg.querySelector(".imgbox img");
+        function addClassByClick(){
+        imgdata.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+document.getElementById("value").value
+       
+        box.classList.add("imgbox2")
+        bg.classList.add("active");
+        
+
+}
+    </script>
+</body>
+</html>
